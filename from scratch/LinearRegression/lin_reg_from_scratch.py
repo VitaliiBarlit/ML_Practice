@@ -53,6 +53,7 @@ class LinearRegression:
             plt.plot(self.x, self.predict(), color='red', linewidth=3)
         except NameError:
             print('')
+            
     def shape(self, array):
         rows = len(array)
         columns = 1
@@ -74,7 +75,14 @@ class LinearRegression:
                 
         return [rows,int(columns)]
     
-    
+    def sq_error(self,arr:list,pred:list):
+        return sum([(pred[i]-arr[i]) ** 2 for i in range(len(arr))])
+
+    def coefficient_of_determination(self):
+        y_mean_line = [self.mean(self.y) for i in self.y]
+        squared_error_regr = self.sq_error(self.y,self.predict())
+        squared_error_y_mean = self.sq_error(self.y, y_mean_line)
+        return 1 - (squared_error_regr/squared_error_y_mean)
     
 reg = LinearRegression(x, y)
 reg.graph()
