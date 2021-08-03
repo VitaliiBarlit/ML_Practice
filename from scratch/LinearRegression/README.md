@@ -1,1 +1,1 @@
-<img src="https://render.githubusercontent.com/render/math?math=B_0^{i \pi} = -1">
+<img src="https://render.githubusercontent.com/render/math?math=\(B_1\) = \(\hat y - B_0 \hat x\)">
