@@ -68,7 +68,7 @@ class LinearRegression:
                 min_c = max(cols)
                 max_c = min(cols)
                 if min_c != max_c:
-                    raise 'uncorrect shape'
+                    raise TypeError('Incorrect shape')
                 else:
                     columns += len(array[i])
                     
